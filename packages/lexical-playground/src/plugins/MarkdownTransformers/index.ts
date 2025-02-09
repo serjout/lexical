@@ -50,6 +50,8 @@ import {
 import {$createImageNode, $isImageNode, ImageNode} from '../../nodes/ImageNode';
 import {$createTweetNode, $isTweetNode, TweetNode} from '../../nodes/TweetNode';
 import emojiList from '../../utils/emoji-list';
+import {HTML_BR} from './html_br';
+import {HTML_TAG_TRANSFORMER} from './html_tag_transformer';
 
 export const HR: ElementTransformer = {
   dependencies: [HorizontalRuleNode],
@@ -319,4 +321,6 @@ export const PLAYGROUND_TRANSFORMERS: Array<Transformer> = [
   ...MULTILINE_ELEMENT_TRANSFORMERS,
   ...TEXT_FORMAT_TRANSFORMERS,
   ...TEXT_MATCH_TRANSFORMERS,
+  HTML_TAG_TRANSFORMER,
+  HTML_BR,
 ];

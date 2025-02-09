@@ -8,6 +8,19 @@
 
 @import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
 
+:root {
+  --md-font-color-passed: rgb(148, 198, 74);
+  --md-font-color-failed: rgb(246, 99, 132);
+  --md-font-color-blocked: rgb(232, 167, 62);
+  --md-font-color-invalid: rgb(102, 16, 242);
+  --md-font-color-skipped: rgb(115, 115, 118);
+
+  --md-mention-bg: #e5eaff;
+  --md-mention-text: #4040dc;
+  --md-mention-me-bg: #686de8;
+  --md-mention-me-text: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular',
