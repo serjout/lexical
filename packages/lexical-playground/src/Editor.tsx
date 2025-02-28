@@ -32,7 +32,6 @@ import {CAN_USE_DOM} from 'shared/canUseDOM';
 import {useSettings} from './context/SettingsContext';
 import {useSharedHistoryContext} from './context/SharedHistoryContext';
 import ActionsPlugin from './plugins/ActionsPlugin';
-import AutocompletePlugin from './plugins/AutocompletePlugin';
 import AutoEmbedPlugin from './plugins/AutoEmbedPlugin';
 import AutoLinkPlugin from './plugins/AutoLinkPlugin';
 import CodeActionMenuPlugin from './plugins/CodeActionMenuPlugin';
@@ -77,7 +76,6 @@ export default function Editor(): JSX.Element {
   const {historyState} = useSharedHistoryContext();
   const {
     settings: {
-      isAutocomplete,
       isMaxLength,
       isCharLimit,
       hasLinkAttributes,
@@ -235,7 +233,6 @@ export default function Editor(): JSX.Element {
             maxLength={5}
           />
         )}
-        {isAutocomplete && <AutocompletePlugin />}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         {shouldAllowHighlightingWithBrackets && <SpecialTextPlugin />}
