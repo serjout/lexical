@@ -36,7 +36,6 @@ import {
 import {useCallback, useEffect, useState} from 'react';
 
 import {INITIAL_SETTINGS} from '../../appSettings';
-import useFlashMessage from '../../hooks/useFlashMessage';
 import useModal from '../../hooks/useModal';
 import Button from '../../ui/Button';
 import {docFromHash, docToHash} from '../../utils/docSerialization';
@@ -105,7 +104,6 @@ export default function ActionsPlugin({
   const [connected, setConnected] = useState(false);
   const [isEditorEmpty, setIsEditorEmpty] = useState(true);
   const [modal, showModal] = useModal();
-  const showFlashMessage = useFlashMessage();
   const {isCollabActive} = useCollaborationContext();
   useEffect(() => {
     if (INITIAL_SETTINGS.isCollab) {
@@ -242,8 +240,8 @@ export default function ActionsPlugin({
               source: 'Playground',
             }),
           ).then(
-            () => showFlashMessage('URL copied to clipboard'),
-            () => showFlashMessage('URL could not be copied to clipboard'),
+            () => console.log('URL copied to clipboard'),
+            () => console.log('URL could not be copied to clipboard'),
           )
         }
         title="Share"
