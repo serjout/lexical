@@ -9,7 +9,6 @@
 import type {JSX} from 'react';
 
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
-import {CharacterLimitPlugin} from '@lexical/react/LexicalCharacterLimitPlugin';
 import {CheckListPlugin} from '@lexical/react/LexicalCheckListPlugin';
 import {ClearEditorPlugin} from '@lexical/react/LexicalClearEditorPlugin';
 import {ClickableLinkPlugin} from '@lexical/react/LexicalClickableLinkPlugin';
@@ -77,9 +76,7 @@ export default function Editor(): JSX.Element {
   const {
     settings: {
       isMaxLength,
-      isCharLimit,
       hasLinkAttributes,
-      isCharLimitUtf8,
       isRichText,
       showTableOfContents,
       shouldUseLexicalContextMenu,
@@ -226,12 +223,6 @@ export default function Editor(): JSX.Element {
             />
             <HistoryPlugin externalHistoryState={historyState} />
           </>
-        )}
-        {(isCharLimit || isCharLimitUtf8) && (
-          <CharacterLimitPlugin
-            charset={isCharLimit ? 'UTF-16' : 'UTF-8'}
-            maxLength={5}
-          />
         )}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}

@@ -15,8 +15,6 @@ export const DEFAULT_SETTINGS = {
   disableBeforeInput: false,
   emptyEditor: isDevPlayground,
   hasLinkAttributes: false,
-  isCharLimit: false,
-  isCharLimitUtf8: false,
   isCollab: false,
   isMaxLength: false,
   isRichText: true,
