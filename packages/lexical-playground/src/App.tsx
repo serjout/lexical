@@ -28,7 +28,6 @@ import Editor from './Editor';
 import PlaygroundNodes from './nodes/PlaygroundNodes';
 import {TableContext} from './plugins/TablePlugin';
 import {parseAllowedFontSize} from './plugins/ToolbarPlugin/fontSize';
-import Settings from './Settings';
 import PlaygroundEditorTheme from './themes/PlaygroundEditorTheme';
 import {parseAllowedColor} from './ui/ColorPicker';
 
@@ -202,25 +201,22 @@ function App(): JSX.Element {
   };
 
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <ToolbarContext>
-            <div className="editor-shell">
-              <Editor />
-            </div>
-            <Settings />
-          </ToolbarContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    <SettingsContext>
+      <LexicalComposer initialConfig={initialConfig}>
+        <SharedHistoryContext>
+          <TableContext>
+            <ToolbarContext>
+              <div className="editor-shell">
+                <Editor />
+              </div>
+            </ToolbarContext>
+          </TableContext>
+        </SharedHistoryContext>
+      </LexicalComposer>
+    </SettingsContext>
   );
 }
 
 export default function PlaygroundApp(): JSX.Element {
-  return (
-    <SettingsContext>
-      <App />
-    </SettingsContext>
-  );
+  return <App />;
 }
